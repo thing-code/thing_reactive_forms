@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 /// This is a convenience widget that wraps a [SwitchListTile] widget in a
@@ -68,7 +68,7 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return SwitchListTile(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeColor,
              activeTrackColor: activeTrackColor,
              inactiveThumbColor: inactiveThumbColor,
              inactiveTrackColor: inactiveTrackColor,
@@ -102,13 +102,12 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
              visualDensity: visualDensity,
              enableFeedback: enableFeedback,
              focusNode: field.focusNode,
-             onChanged:
-                 field.control.enabled
-                     ? (value) {
-                       field.didChange(value);
-                       onChanged?.call(field.control);
-                     }
-                     : null,
+             onChanged: field.control.enabled
+                 ? (value) {
+                     field.didChange(value);
+                     onChanged?.call(field.control);
+                   }
+                 : null,
            );
          },
        );
@@ -172,7 +171,7 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return SwitchListTile.adaptive(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeColor,
              activeTrackColor: activeTrackColor,
              inactiveThumbColor: inactiveThumbColor,
              inactiveTrackColor: inactiveTrackColor,
@@ -207,13 +206,12 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
              tileColor: tileColor,
              title: title,
              visualDensity: visualDensity,
-             onChanged:
-                 field.control.enabled
-                     ? (value) {
-                       field.didChange(value);
-                       onChanged?.call(field.control);
-                     }
-                     : null,
+             onChanged: field.control.enabled
+                 ? (value) {
+                     field.didChange(value);
+                     onChanged?.call(field.control);
+                   }
+                 : null,
            );
          },
        );

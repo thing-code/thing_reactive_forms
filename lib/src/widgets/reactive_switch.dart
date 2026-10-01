@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 /// This is a convenience widget that wraps a [Switch] widget in a
@@ -65,7 +65,7 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return Switch(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeColor,
              trackOutlineColor: trackOutlineColor,
              thumbIcon: thumbIcon,
              onFocusChange: onFocusChange,
@@ -89,13 +89,12 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
              focusNode: field.focusNode,
              padding: padding,
              trackOutlineWidth: trackOutlineWidth,
-             onChanged:
-                 field.control.enabled
-                     ? (value) {
-                       field.didChange(value);
-                       onChanged?.call(field.control);
-                     }
-                     : null,
+             onChanged: field.control.enabled
+                 ? (value) {
+                     field.didChange(value);
+                     onChanged?.call(field.control);
+                   }
+                 : null,
            );
          },
        );
@@ -154,7 +153,7 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return Switch.adaptive(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeColor,
              activeTrackColor: activeTrackColor,
              inactiveThumbColor: inactiveThumbColor,
              inactiveTrackColor: inactiveTrackColor,
@@ -179,13 +178,12 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
              applyCupertinoTheme: applyCupertinoTheme,
              onFocusChange: onFocusChange,
              focusNode: field.focusNode,
-             onChanged:
-                 field.control.enabled
-                     ? (value) {
-                       field.didChange(value);
-                       onChanged?.call(field.control);
-                     }
-                     : null,
+             onChanged: field.control.enabled
+                 ? (value) {
+                     field.didChange(value);
+                     onChanged?.call(field.control);
+                   }
+                 : null,
            );
          },
        );

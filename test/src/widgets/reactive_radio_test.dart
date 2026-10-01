@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import 'reactive_radio_testing_widget.dart';
@@ -18,12 +18,11 @@ void main() {
       await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
       // Expect radio group value is true
-      final radioType =
-          const Radio<bool>(
-            value: false,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: false,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
       expect(radio.groupValue, true);
@@ -41,12 +40,11 @@ void main() {
       await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
       // Expect radio group value is false
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
 
@@ -69,12 +67,11 @@ void main() {
         await tester.pump();
 
         // Expect radio group value is true
-        final radioType =
-            const Radio<bool>(
-              value: false,
-              groupValue: null,
-              onChanged: null,
-            ).runtimeType;
+        final radioType = const Radio<bool>(
+          value: false,
+          groupValue: null,
+          onChanged: null,
+        ).runtimeType;
 
         final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
         expect(radio.groupValue, true);
@@ -97,12 +94,11 @@ void main() {
         await tester.pump();
 
         // Expect radio group value is true
-        final radioType =
-            const Radio<bool>(
-              value: true,
-              groupValue: null,
-              onChanged: null,
-            ).runtimeType;
+        final radioType = const Radio<bool>(
+          value: true,
+          groupValue: null,
+          onChanged: null,
+        ).runtimeType;
 
         final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
         expect(radio.groupValue, false);
@@ -121,12 +117,11 @@ void main() {
       await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
       // Then: the radio is disabled
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
       expect(radio.onChanged, null);
@@ -144,12 +139,11 @@ void main() {
       await tester.pump();
 
       // Then: the radio is disabled
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
       expect(radio.onChanged, null);
@@ -169,12 +163,11 @@ void main() {
       await tester.pump();
 
       // Then: the radio is enabled
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       final radio = tester.firstWidget<Radio<bool>>(find.byType(radioType));
       expect(radio.onChanged != null, true);
@@ -189,12 +182,11 @@ void main() {
       // And: a widget that is bind to the form
       await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       // Expect: that the field has no focus
       var radioField = tester.firstWidget<Radio<bool>>(find.byType(radioType));
@@ -218,12 +210,11 @@ void main() {
       // And: a widget that is bind to the form
       await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       // And: the field has focused
       var radioField = tester.firstWidget<Radio<bool>>(find.byType(radioType));
@@ -249,12 +240,11 @@ void main() {
       // And: a widget that is bind to the form
       await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       // And: the field has focused
       var radioField = tester.firstWidget<Radio<bool>>(find.byType(radioType));
@@ -280,12 +270,11 @@ void main() {
         // And: a widget that is bind to the form
         await tester.pumpWidget(ReactiveRadioTestingWidget(form: form));
 
-        final radioType =
-            const Radio<bool>(
-              value: true,
-              groupValue: null,
-              onChanged: null,
-            ).runtimeType;
+        final radioType = const Radio<bool>(
+          value: true,
+          groupValue: null,
+          onChanged: null,
+        ).runtimeType;
 
         // And: the field has focused
         var textField = tester.firstWidget<Radio<bool>>(find.byType(radioType));
@@ -313,12 +302,11 @@ void main() {
         ReactiveRadioTestingWidget(form: form, focusNode: focusNode),
       );
 
-      final radioType =
-          const Radio<bool>(
-            value: true,
-            groupValue: null,
-            onChanged: null,
-          ).runtimeType;
+      final radioType = const Radio<bool>(
+        value: true,
+        groupValue: null,
+        onChanged: null,
+      ).runtimeType;
 
       // Expect: field has the provided focus node
       final textField = tester.firstWidget<Radio<bool>>(find.byType(radioType));
@@ -340,12 +328,11 @@ void main() {
           ReactiveRadioTestingWidget(form: form, focusNode: focusNode),
         );
 
-        final radioType =
-            const Radio<bool>(
-              value: true,
-              groupValue: null,
-              onChanged: null,
-            ).runtimeType;
+        final radioType = const Radio<bool>(
+          value: true,
+          groupValue: null,
+          onChanged: null,
+        ).runtimeType;
 
         // Expect: field has the provided focus node and is the same of the
         // focus controller
@@ -379,12 +366,11 @@ void main() {
       );
 
       // When: user change switch value
-      final widget =
-          tester
-              .widgetList<Radio<bool>>(find.byType(Radio<bool>))
-              .map((widget) => widget)
-              .toList()
-              .first;
+      final widget = tester
+          .widgetList<Radio<bool>>(find.byType(Radio<bool>))
+          .map((widget) => widget)
+          .toList()
+          .first;
       widget.onChanged!(true);
 
       // Then: onChanged callback is called
